@@ -1,0 +1,66 @@
+
+{% extends 'ecom/homebase.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}UPDATE CUSTOMER{% endblock title %}
+
+{% block content %}
+<!-- start main content -->
+<main class="container">
+
+	<section>
+
+		<div class="signuppanel">
+
+			<div class="row">								
+
+				<div class="col-md-6">
+
+					<form method="post"  enctype="multipart/form-data">
+
+						<h3 class="nomargin">UPDATE CUSTOMER DETAILS </h3>
+
+						
+						<div class="row mb10">	
+								<label class="control-label">NAME</label>						
+								{% render_field userForm.first_name class="form-control" placeholder="First Name" %}							
+						</div>
+
+						<div class="mb10">
+							<label class="control-label">USERNAME</label>
+							 {% render_field userForm.username class="form-control" placeholder="Username" %}
+						</div>
+						<div class="mb10">
+							<label class="control-label">MOBLILE</label>
+							{% render_field customerForm.mobile class="form-control" placeholder="Mobile" %}			
+						</div>
+
+						<div class="mb10">
+							<label class="control-label">Password</label>
+				             {% render_field userForm.password class="form-control" placeholder="Password" %}
+						</div>
+						<div class="mb10">
+							<label class="control-label">Location</label>
+							{% render_field customerForm.address class="form-control" placeholder="Address" %}
+						<div class="mb10">
+							<label class="control-label">PROFIL PICTURE</label>
+           				    {% render_field customerForm.profile_pic class="form-control" placeholder="Profile Picture" %}
+						</div>
+						<br />
+
+						<button class="btn btn-success btn-block">UPDATE</button>
+					</form>
+				</div><!-- col-sm-6 -->
+
+			</div><!-- row -->
+
+
+
+		</div><!-- signuppanel -->
+
+	</section>
+</main>
+<!-- end  main content -->
+
+{% endblock content %}

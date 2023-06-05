@@ -1,0 +1,77 @@
+
+{% extends 'ecom/homebase.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}Authentification Client{% endblock title %}
+
+{% block content %}
+
+
+<!-- start main content -->
+<main class="container">
+
+	<section>
+
+		<div class="signinpanel">
+
+			<div class="row">
+
+				<div class="col-md-6">
+					
+                    
+					<form method="post" action="#">
+                    {% csrf_token %}
+						<h3 class="nomargin">Authentification Client</h3>
+						<p class="mt5 mb20">Identifiez vous pour accéder à votre compte.</p>
+						<div class="row mb10">
+						
+								<label class="control-label">NOM D'UTILISATEUR</label>							
+                              	 {% render_field form.username class="form-control" placeholder="Username" %}
+						</div>
+						<br>
+						<div class="row mb10">
+								<label class="control-label">MOT DE PASSE</label>							
+                               {% render_field form.password class="form-control" placeholder="Password" %}
+						</div>
+						<div class="row mb10">
+							<a href="#"><small>Mot de passe oublié?</small></a>
+						</div>
+						<div class="row mb10">
+							<button class="btn btn-success btn-block">Login</button>
+						</div>
+						<div class="row mb10">
+								<h3><p class="mt5 mb20"> Nouveau Client &nbsp;&nbsp;<a href="{% url 'customersignup' %}"><strong>s'inscrire</strong></a></p></h3>
+						<div>
+                        <br>
+						
+					</form>
+				</div><!-- col-md-6 -->
+
+								    
+				</div><!-- col-sm-7 -->
+			</div><!-- row -->
+		</div><!-- login -->
+	</section>
+</main>
+<!-- end  main content -->
+
+{% endblock content %}
+																																					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

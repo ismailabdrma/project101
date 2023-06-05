@@ -1,0 +1,111 @@
+<head>
+{% load static %}
+<!-- Fav icon -->
+  <link rel="shortcut icon" href={% static 'img/favicon.ico' %}>
+  <link href={% static 'assets/plugins/et-line/et-line.css' %} rel="stylesheet" type="text/css"/>
+
+{% load static %}
+<title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body class="style-14">
+
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+
+<!-- Start Loading -->
+<section class="loading-overlay">
+	<div class="Loading-Page">
+		<h1 class="loader">Loading...</h1>
+	</div>
+</section>
+<!-- End Loading  -->
+
+<!-- start header -->
+<header>
+
+	<!-- Top bar ends -->
+
+	<!-- Header One Starts -->
+	<div class="header-1">
+
+		<!-- Container -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-4">
+					<!-- Logo section -->
+					<div class="logo">
+						<h1><a href="{% url 'admin-dashboard' %}"><i class="fa fa-bookmark-o"></i> LookCare</a></h1>
+					</div>
+				</div>
+				<div class="col-md-6 col-md-offset-2 col-sm-5 col-sm-offset-3 hidden-xs">
+				
+				</div>
+			</div>
+		</div>
+
+		<!-- Navigation starts -->
+
+		<div class="navi">
+			<div class="container">
+				<div class="navy">
+					<ul>
+						
+
+						<li><a href="{% url 'admin-dashboard' %}">Tableau de bord</a></li>
+						<li><a href="{% url 'view-customer' %}">Clients</a>
+						
+						
+						</li>
+						
+						<li><a href="{% url 'admin-products' %}">Produits</a>
+							
+						</li>
+
+						<li><a href="{% url 'admin-categorie' %}">Catégories</a>
+						
+						</li>
+            <li><a href="{% url 'admin-view-booking' %}">Commandes</a>
+						
+            </li>
+					<li style="margin-left:1010px;position: absolute;"><a href="{% url 'logout' %}">Se déconnecter</a>
+						
+						</li>
+								
+				</div>
+			</div>
+		</div>
+
+		<!-- Navigation ends -->
+
+	</div>
+
+</header>
+{% block content %}
+
+{% endblock content %}
+<script src={% static 'js/vendor/jquery-1.10.2.min.js' %}></script>
+<script src={% static 'js/bootstrap.min.js' %}></script>
+<script src={% static 'js/smoothscroll.js' %}></script>
+
+<script src={% static 'js/jquery.scrollUp.js' %}></script>
+<script src={% static 'js/menu.js' %}></script>
+<script src={% static 'js/owl.carousel.min.js' %}></script>
+<script src={% static 'js/main.js' %}></script>
+
+<script src="{% static 'js/swiper/idangerous.swiper.min.js' %}"></script>
+<script src="{% static 'js/swiper/swiper.custom.js' %}"></script>
+
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+<footer>
+{% include 'ecom/footer.html' %}
+</footer>
+</html>

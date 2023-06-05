@@ -1,0 +1,40 @@
+{% extends 'ecom/admin_base.html' %}
+{% load widget_tweaks %}
+
+
+{% block title %}Update Categorie{% endblock title %}
+
+{% block content %}
+<main class="container">
+	<section>
+		<div class="signuppanel">
+			<div class="row">							
+
+				<div class="col-md-6">
+
+					<form method="post" action="#" enctype="multipart/form-data">
+					{% csrf_token %}
+						<h3 class="nomargin">Update Categorie </h3>
+
+						
+						<div class="mb10">
+							<label class="control-label">Categorie NAME</label>
+                        	{% render_field categoryForm.nom_Cat  class="form-control" placeholder="Categorie Name" %}
+                        </div>
+                        
+                        <div class="mb10">
+	                        <label class="control-label">DESCRIPTION</label>
+	                        {% render_field categoryForm.description class="form-control" placeholder="Description" %}
+                        </div>
+                    <br>
+                        <div>	
+                        <button class="btn btn-success btn-block">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock content %}

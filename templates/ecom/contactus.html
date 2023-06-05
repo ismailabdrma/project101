@@ -1,0 +1,139 @@
+{% extends 'ecom/homebase.html' %}
+<title>{% block title %} Contact {% endblock title %}</title>
+{% load widget_tweaks %}
+
+{% block content %}
+
+<main class="main-container">
+  <!-- contact content -->
+  
+  
+    <!-- Start Contact Us -->
+  
+    <div id="Contact" class="light-wrapper">
+      <div class="container inner">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="Contact-Form">
+                <form class="leave-comment contact-form" method="post" action="#" id="cform" autocomplete="on">
+                {% csrf_token %}
+                  <div class="Contact-us">
+                    <div class="form-input col-md-4">
+                    	{% render_field form.Name class="form-control" placeholder="Votre Nom" %}
+                    </div>
+                    <div class="form-input col-md-4">
+                      {% render_field form.Email class="form-control" placeholder="Votre Email " %}
+                    </div>
+                    <div class="form-input col-md-12">
+                      {% render_field form.Message class="form-control" placeholder="Votre Message " %}
+                    </div>
+                    <div class="form-submit col-md-12">
+                      <input type="submit" class="btn btn-custom-6" value="Envoyer Message">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+  
+            <div class="Contact-Info">
+              <h4>Contact Details</h4>
+              
+              
+             
+              <div class="Block-Contact col-md-6">
+                <p>Telephone :</p>
+                <ul>
+                  <li>
+                    <i class="fa fa-phone"></i>
+                    <span>+(212) 6-23-42-56-87 </span>
+                  </li>
+                  <li>
+                    <i class="fa fa-fax"></i>
+                    <span>+(212) 5-23-42-56-87</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="Block-Contact col-md-6">
+                <p>Email :</p>
+                <ul>
+                  <li>
+                    <i class="fa fa-envelope"></i>
+                    <span>demo@metlife.com</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="Block-Contact col-md-12">
+                <p>Address :</p>
+                <ul>
+                  <li>
+                    <i class="fa fa-map-marker"></i>
+                    <span>3453 casa, sidi maarouf.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- End Contact Us -->
+  <!-- end contact content -->
+  
+    <section class="block gray no-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="content-box no-margin go-simple">
+              <div class="mini-service-sec">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="mini-service">
+                      <i  class="fa fa-paper-plane"></i>
+                      <div class="mini-service-info">
+                        <h3>Worldwide Delivery</h3>
+                        <p>unc tincidunt, on cursusau gmetus, lorem Hore</p>
+                      </div>
+                    </div><!-- Mini Service -->
+                  </div>
+                  <div class="col-md-3">
+                    <div class="mini-service">
+                      <i  class="fa  fa-newspaper-o"></i>
+                      <div class="mini-service-info">
+                        <h3>Worldwide Delivery</h3>
+                        <p>unc tincidunt, on cursusa ugmetus, lorem Hore</p>
+                      </div>
+                    </div><!-- Mini Service -->
+                  </div>
+                  <div class="col-md-3">
+                    <div class="mini-service">
+                      <i  class="fa fa-medkit"></i>
+                      <div class="mini-service-info">
+                        <h3>Friendly Stuff</h3>
+                        <p>unc tincidunt, on cursusau gmetus, lorem Hore</p>
+                      </div>
+                    </div><!-- Mini Service -->
+                  </div>
+                  <div class="col-md-3">
+                    <div class="mini-service">
+                      <i  class="fa  fa-newspaper-o"></i>
+                      <div class="mini-service-info">
+                        <h3>24/h Support</h3>
+                        <p>unc tincidunt, on cursusa ugmetus, lorem Hore</p>
+                      </div>
+                    </div><!-- Mini Service -->
+                  </div>
+                  </div>
+                </div>
+              </div><!-- Mini Service Sec -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <br><br><br><br> <br><br><br><br> <br><br><br><br><br><br>
+  {% endblock content %}

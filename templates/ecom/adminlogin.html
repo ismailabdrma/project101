@@ -1,0 +1,74 @@
+
+{% extends 'ecom/homebase.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}Admin LOGIN{% endblock title %}
+
+{% block content %}
+
+
+<!-- start main content -->
+<main class="container">
+
+	<section>
+
+		<div class="signinpanel">
+
+			<div class="row">
+
+				<div class="col-md-6">
+					
+                    
+					<form method="post" action="#">
+                    {% csrf_token %}
+						<h3 class="nomargin">Admin Login</h3>
+						<p class="mt5 mb20">Login to access your account.</p>
+						<div class="row mb10">
+						
+								<label class="control-label">USERNAME</label>							
+                     			{% render_field form.username class="form-control" placeholder="Username" %}
+						</div>
+						<br>
+						<div class="row mb10">
+								<label class="control-label">PASSWORD</label>							
+                     			{% render_field form.password class="form-control" placeholder="Password" %}
+						</div>
+						<div class="row mb10">
+							<a href="#"><small>Forgot Your Password?</small></a>
+						</div>
+						<div class="row mb10">
+							<button class="btn btn-success btn-block">Login</button>
+						</div>
+                        <br>
+
+					</form>
+				</div><!-- col-md-6 -->
+
+								    
+				</div><!-- col-sm-7 -->
+			</div><!-- row -->
+		</div><!-- login -->
+	</section>
+</main>
+<!-- end  main content -->
+
+{% endblock content %}
+																																					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

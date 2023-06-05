@@ -1,0 +1,73 @@
+{% extends 'ecom/homebase.html' %}
+{% load static %}
+{% block title %}Customer Home {% endblock title %}
+{% block content %}
+
+ <link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+
+{%if products%}
+<h3 style="text-align:center; color:yellow;">{{word}}</h3>
+<br>
+
+<section id="popular-product" class="ecommerce">
+	<div class="container">
+		<!-- Shopping items content -->
+		<div class="shopping-content">
+
+			<!-- Block heading two -->
+			<div class="block-heading-two">
+				<h2><span>Produits</span></h2>
+			</div>
+
+			<div class="row">
+
+      {% for p in products %}
+      <!-- card1 -->
+      <div class="row">
+				<div class="col-md-3 col-sm-6">
+					<!-- Shopping items -->
+					<div class="shopping-item">
+						<!-- Image -->
+						<a href=""><img class="img-responsive" src="{% static p.product_image.url %}" alt="produit" /></a>
+						<!-- Shopping item name / Heading -->
+						<h4><a href="#">{{p.name}}</a><span class="color pull-right">{{p.price}}MAD</span></h4>
+						<div class="clearfix"></div>
+						<!-- Buy now button -->
+						<div class="visible-xs">
+							<a class="btn btn-color btn-sm" href="#">Acheter</a>
+						</div>
+            
+						<!-- Shopping item hover block & link -->
+						<div class="item-hover bg-color hidden-xs"  >
+							<a  href="{% url 'add-to-cart' p.id  %}" >Add to cart</a>
+						</div>
+					</div>
+				</div>
+			
+<!-- card1 end -->
+{% if forloop.counter|divisibleby:"4" %}
+    </div>
+
+    <div class="row">
+
+          <br><br><br><br><br>
+{% endif %}
+  {% endfor %}
+ 
+</div>
+ </section>
+<!-- products data enddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd -->
+{%else%}
+<h3 style="text-align:center; color:black;">No Search Found</h3>
+{%endif%}
+
+<script>
+    {%if messages %}
+    {%for message in messages%}
+    alert('{{message}}');
+    {%endfor%}
+    {%endif%}
+</script>
+<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock content %}

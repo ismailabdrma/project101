@@ -1,0 +1,57 @@
+{% extends 'ecom/homebase.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block title %}Adresse Client{% endblock title %}
+{% block content %}
+
+
+{%if product_in_cart%}
+<main class="container">
+
+	<section>
+
+		<div class="signuppanel">
+
+			<div class="row">							
+
+				<div class="col-md-6">
+
+					<form method="post" >
+					{% csrf_token %}
+					<h3 class="nomargin">Adresse Client </h3>
+					<div class="mb10">
+							
+							<label class="control-label">Email <span class="required">*</span></label>
+   					     	{% render_field addressForm.Email class="form-control" placeholder="Email" %}
+							
+					</div>
+
+
+  					<div class="mb10">
+  					    <label>Mobile <span class="required">*</span></label>
+  					    {% render_field addressForm.Mobile class="form-control" placeholder="Mobile" %}
+  					</div>
+
+  					<div class="mb10">
+        				<label>Shipment Address <span class="required">*</span></label>
+        				{% render_field addressForm.Address  class="form-control" placeholder="Building Number,city, pin" %}
+
+   					</div>
+				<br>
+   					<div>
+        				<input type="submit" class="btn btn-success btn-block" value="Proceed To Pay" />
+  					 </div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+{%else%}
+<br><br>
+<h1 style="text-align:center; color:red;"> First Add Product In Cart </h1>
+<br><br><br><br><br><br><br><br><br><br>
+{%endif%}
+<br><br><br><br>
+
+{% endblock content %}

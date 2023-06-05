@@ -1,0 +1,84 @@
+{% extends 'ecom/admin_base.html' %}
+{% load static %}
+	  <link rel="stylesheet" href={% static 'css/setting.css' %}>
+{% block title %}view booking {% endblock title %}
+{% block content %}
+
+
+<!-- start main content -->
+<main class="main-container">
+<!-- compare content -->
+	<!-- Main content starts -->
+
+	<div class="main-block">
+
+		<div class="container">
+
+			<!-- Actual content -->
+			<div class="ecommerce pt-40">
+				<div class="row">
+					<div class="col-md-12 col-sm-12">
+						<!-- Shopping items content -->
+            <div class="shopping-content">
+            <h3 class="nomargin"><a href="#" >Liste Client <a></h3>
+	            <!-- Block Title -->
+            	<!-- Shopping Edit Profile -->
+            	<div class="shopping-wishlist">
+            		<!-- Recent Purchase Table -->
+              		<div class=" table-responsive">
+            			  <table class="table table-bordered">
+			          	<!-- Table Header -->
+                       <thead>
+                          <tr>
+                            <th>Customer Name</th>
+                            <th>Profile Picture</th>
+                            <th>Mobile</th>
+                            <th>Address</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead> 
+                        <tbody>                                                 
+                         {% for c in customers %}
+                         {% if c %}
+                         <tr>
+                           <td> {{c.get_name}}</td>
+                           <td> <img src="{% static c.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
+                           <td>{{c.mobile}}</td>
+                           <td>{{c.address}}</td>
+                           <td>
+                              <div class="btn-group btn-group-xs">
+                                  <button class="btn btn-sm btn-default" onclick="location.href='{% url 'update-customer' c.id %}'"><i class="fa fa-edit"></i> </button>
+                                  <button class="btn btn-sm btn-red" onclick="location.href='{% url 'delete-customer' c.id  %}'"><i class="fa fa-trash-o"></i> </button>
+                              </div> 
+                           </td>
+                         </tr>
+                        {% else %} 
+                           <br><br><br> 
+                                  <h1> Aucun Customer <h1> 
+                        {% endif %}
+                        {% endfor %}
+                        </tbody>
+                     </table>
+                  </div>
+                </div>
+            </div>
+            <br />
+          </div>
+     </div>
+   </div>
+</div>
+
+
+<br><br><br><br>
+<br><br><br><br>
+
+<br><br><br><br>
+<br><br><br><br>
+
+
+{% endblock content %}
+
+
+
+
+

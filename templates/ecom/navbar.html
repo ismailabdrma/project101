@@ -1,0 +1,186 @@
+{% load static %}
+<html>
+<head>
+     <link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+	<title>Home page | LookCare</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Fav icon -->
+	<link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+
+	<!-- Font -->
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,900,700,700italic,300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700%7CDancing+Script%7CMontserrat:400,700%7CMerriweather:400,300italic%7CLato:400,700,900' rel='stylesheet' type='text/css' />
+	<link href='http://fonts.googleapis.com/css?family=Cantata+One' rel='stylesheet' type='text/css' />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700,600' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,700' rel='stylesheet' type='text/css'>
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+
+
+
+
+
+</head>
+
+<body class="style-14">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+
+
+
+
+
+<!-- Start Loading -->
+<section class="loading-overlay">
+	<div class="Loading-Page">
+		<h1 class="loader">Loading...</h1>
+	</div>
+</section>
+<!-- End Loading  -->
+
+<!-- start header -->
+<header>
+	<!-- Top bar starts -->
+	<div class="top-bar">
+		<div class="container">
+
+			<!-- Contact starts -->
+			<div class="tb-contact pull-left">
+				<!-- Email -->
+				<i class="fa fa-envelope color"></i> &nbsp; <a href="mailto:contact@domain.com">lookcare.com</a>
+				&nbsp;&nbsp;
+				<!-- Phone -->
+				<i class="fa fa-phone color"></i> &nbsp; +212 60-96-66-773 &nbsp;&nbsp; &nbsp;&nbsp;
+			</div>
+			<!-- Contact ends -->
+			<a href="{% url 'adminlogin' %}" ><span>admin</span></a>
+
+			<!-- Shopping kart starts -->
+			<div class="tb-shopping-cart pull-right">
+				<!-- Link with badge -->
+				<a href="shopping-cart.html" class="btn btn-white btn-xs b-dropdown"><i class="fa fa-shopping-cart"></i> <i class="fa fa-angle-down color"></i> <span class="badge badge-color">{{ product_count_in_cart }}</span></a>
+				<!-- Dropdown content with item details -->
+				<div class="b-dropdown-block">
+	
+							
+
+					<a href="{% url 'cart' %}" class="btn btn-white btn-sm">Voir Panier</a> &nbsp; <a href="{% url '' %}" class="btn btn-color btn-sm">Paiement</a>
+				</div>
+			</div>
+			<!-- Shopping kart ends -->
+
+			<!-- Social media starts -->
+			<div class="tb-social pull-right">
+				<div class="brand-bg text-right">
+					<!-- Brand Icons -->
+					<a href="{% url 'customersignup' %}"><span>S'inscrire</span></a> &nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="{% url 'customerlogin' %}"><span>Se connecter</span></a>&nbsp;&nbsp;
+					<a href="https://facebook.com" class="facebook"><i class="fa fa-facebook square-2 rounded-1"></i></a>
+					<a href="https://twitter.com" class="twitter"><i class="fa fa-twitter square-2 rounded-1"></i></a>
+					<a href="https://plus.google.com/" class="google-plus"><i class="fa fa-google-plus square-2 rounded-1"></i></a>
+					
+				</div>
+			</div>
+			<!-- Social media ends -->
+
+			<div class="clearfix"></div>
+		</div>
+	</div>
+
+	<!-- Top bar ends -->
+
+	<!-- Header One Starts -->
+	<div class="header-1">
+
+		<!-- Container -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-4">
+					<!-- Logo section -->
+					<div class="logo">
+						<h1><a href="{% url '' %}"><i class="fa fa-bookmark-o"></i> LookCare</a></h1>
+					</div>
+				</div>
+				<div class="col-md-6 col-md-offset-2 col-sm-5 col-sm-offset-3 hidden-xs">
+					<!-- Search Form -->
+					<div class="header-search">
+						<form action="/search" method="get">
+							<!-- Input Group -->
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Taper quelque chose" name="query" id="query">
+										<span class="input-group-btn">
+											<button class="btn btn-color" type="button">Rechercher<path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path></button>
+										</span>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Navigation starts -->
+
+		<div class="navi">
+			<div class="container">
+				<div class="navy">
+					<ul>
+						<!-- Main menu -->
+						<li><a href="{% url '' %}">Acceuil</a></li>
+							<!-- Submenu -->
+						<li><a href="/aboutus">A propos </a></li>
+						<li><a href="{% url 'contactus' %}">Contact</a></li>
+						
+					<ul>	
+				</div>
+			</div>
+		</div>
+
+		<!-- Navigation ends -->
+
+	</div>
+
+	<!-- Header one ends -->
+
+</header>
+</body>
+	<!-- Header one ends -->
+
+
+<!-- All script -->
+<script src="{% static 'js/vendor/jquery-1.10.2.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/smoothscroll.js' %}"></script>
+<!-- Scroll up js
+============================================ -->
+<script src="{% static 'js/jquery.scrollUp.js' %}"></script>
+<script src="{% static 'js/menu.js' %}"></script>
+<!-- new collection section script -->
+<script src="{% static 'js/swiper/idangerous.swiper.min.js' %}"></script>
+<script src="{% static 'js/swiper/swiper.custom.js' %}"></script>
+
+
+
+
+
+
+
+<script>
+ $(document).ready(function(){
+ function openNav() {
+ document.getElementById("mySidenav").style.width = "70%";
+ document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+ }
+ function closeNav() {
+ document.getElementById("mySidenav").style.width = "0";
+ document.body.style.backgroundColor = "rgba(0,0,0,0)";
+ }
+ });
+ </script>
+
+</html>

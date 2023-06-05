@@ -1,0 +1,72 @@
+
+{% extends 'ecom/admin_base.html' %}
+{% load widget_tweaks %}
+
+
+{% block title %}Update Product{% endblock title %}
+
+{% block content %}
+<!-- start main content -->
+<main class="container">
+
+	<section>
+
+		<div class="signuppanel">
+
+			<div class="row">
+
+				<div class="col-md-6">
+
+					<form method="post" action="#" >
+					{% csrf_token %}
+
+						<h3 class="nomargin">UPDATE PRODUCT </h3>
+						
+
+						
+						<div class="row mb10">
+							<div class="col-sm-6">
+								<label class="control-label">PRODUCT NAME</label>
+								{% render_field productForm.name class="form-control" placeholder="Product Name" %}
+							</div>
+						</div>
+            <br>
+
+						<div class="mb10">
+							<label class="control-label">DESCRIPTION</label>
+							{% render_field productForm.description class="form-control" placeholder="Description" %}
+						</div>
+            <br>
+						<div class="mb10">
+							<label class="control-label">PRICE</label>
+							{% render_field productForm.price class="form-control" placeholder="Price" %}
+						</div>
+            <br>
+						<div class="mb10">
+									<label class="control-label">CATEGORIE</label>
+									{% render_field productForm.categorie class="form-control" placeholder="categorie" %}
+						</div>
+						<div class="mb10">
+							<label class="control-label">PRODUCT IMAGE</label>
+              				{% render_field productForm.product_image class="form-control" placeholder="product_image" %}
+						</div>
+						
+						
+						
+						
+            <br>
+			<br>		
+						<div>	
+						<button class="btn btn-success btn-block">UPDATE</button>
+						</div>
+					</form>
+				</div><!-- col-sm-6 -->
+
+			</div><!-- row -->
+		</div><!-- signuppanel -->
+
+	</section>
+</main>
+<!-- end  main content -->
+
+{% endblock content %}
